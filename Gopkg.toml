@@ -24,6 +24,14 @@
 #   go-tests = true
 #   unused-packages = true
 
+[[constraint]]
+  name = "github.com/gin-gonic/gin"
+  version = "1.2.0"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/gin-contrib/static"
+
 # 英[pru:n] 减少，删除
 [prune]
   go-tests = true
