@@ -4,6 +4,8 @@ import (
 	"runtime"
 	"strconv"
 
+	"github.com/go-vue/routes"
+
 	"github.com/gin-contrib/static"
 	"github.com/gin-gonic/gin"
 	"github.com/pbnjay/memory"
@@ -24,6 +26,8 @@ func main() {
 			strconv.FormatUint(memory.TotalMemory()/(1024*1024), 10),
 		})
 	})
+
+	r.POST("/api/persist", routes.Persist)
 
 	r.Run()
 }
