@@ -32,6 +32,10 @@
   branch = "master"
   name = "github.com/gin-contrib/static"
 
+[[constraint]]
+branch = "master"
+name = "github.com/pbnjay/memory"
+
 # 英[pru:n] 减少，删除
 [prune]
   go-tests = true
