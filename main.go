@@ -4,7 +4,7 @@ import (
 	"runtime"
 	"strconv"
 
-	"github.com/go-vue/routes"
+	"github.com/singcl/go-vue/routes"
 
 	"github.com/gin-contrib/static"
 	"github.com/gin-gonic/gin"
