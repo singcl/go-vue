@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/gin-gonic/gin"
+	"github.com/gonum/stat"
 	"github.com/singcl/go-vue/db"
 )
 
@@ -43,15 +44,21 @@ func Persist(c *gin.Context) {
 	txn.Commit()
 }
 
-// // 创建只读事务
-// txn = db.Txn(false)
-// defer txn.Abort()
+// Mean is a router handler
+// 重启后 内存数据库中数据就没了。必须重启生成数据（调用上面的接口）该接口才会正确返回
+func Mean(c *gin.Context) {
+	memDb := db.Database
 
-// // 返回第一个符合的记录
-// raw, err := txn.First("person", "id", "joe@aol.com")
-// if err != nil {
-//     panic(err)
-// }
+	// 创建只读事务
+	txn := memDb.Txn(false)
+	defer txn.Abort()
 
-// // Say hi!
-// fmt.Printf("Hello %s!", raw.(*Person).Name)
+	raw, err := txn.First("data", "id", uint(1))
+	if err != nil {
+		panic(err)
+	}
+
+	mean := stat.Mean(raw.(*DbSchema).Data, nil)
+
+	c.JSON(200, mean)
+}

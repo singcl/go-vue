@@ -28,6 +28,7 @@ func main() {
 	})
 
 	r.POST("/api/persist", routes.Persist)
+	r.POST("/api/descriptive/mean", routes.Mean)
 
 	r.Run()
 }
