@@ -7,20 +7,23 @@ import (
 	"github.com/singcl/go-vue/db"
 )
 
+// MemData is POST 的数据结构体
 type MemData struct {
-	Data []float64 `binding: "required"`
+	Data []float64 `binding:"required"` // tag key:value中间不需要空格
 }
 
+// DbSchema 数据存入数据库之前的处理
 type DbSchema struct {
 	Id   uint
 	Data []float64 `binding:"required"`
 }
 
-// init函数import的时候会执行 详情查看init() main() 相关函数
+// init 函数 import 的时候会执行 详情查看init() main() 相关函数
 func init() {
 	db.SetupDb()
 }
 
+// Persist 路由handler 处理请求数据
 func Persist(c *gin.Context) {
 	data := new(MemData)
 	c.Bind(&data)
