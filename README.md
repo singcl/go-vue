@@ -32,3 +32,19 @@ heroku 会为 web 应用动态分配 PORT，所以不要固定 PORT 即可
 ```
 
 ### 示例地址：https://go-vue-example.herokuapp.com/
+
+
+## DEPLOY
+
+```sh
+cd client
+npm i
+npm run build
+
+cd ..
+heroku login
+
+git remote add heroku https://git.heroku.com/go-vue-example.git
+
+git push heroku master
+```
