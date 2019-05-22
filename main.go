@@ -29,6 +29,8 @@ func main() {
 
 	r.POST("/api/persist", routes.Persist)
 	r.POST("/api/descriptive/mean", routes.Mean)
+	r.POST("/api/descriptive/standard-deviation", routes.StdDev)
+	r.POST("/api/distribution", routes.NormalCDF)
 
 	r.Run()
 }
