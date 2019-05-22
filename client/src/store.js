@@ -1,16 +1,16 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {
+    state: {
+        data: []
+    },
 
-  },
-  mutations: {
-
-  },
-  actions: {
-
-  }
-})
+    mutations: {
+        SET_DATA(state, { points, multiplier }) {
+            state.data = Array.from({ length: points }, () => Math.floor((Math.random() * multiplier) / Math.random()));
+        }
+    }
+});

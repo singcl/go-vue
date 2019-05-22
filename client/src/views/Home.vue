@@ -1,18 +1,34 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div class="container">
+        <specs />
+
+        <chart style="margin-top: 1.75rem;"></chart>
+
+        <descriptive style="margin-top: 1.75rem;"></descriptive>
+
+        <distribution style="margin-top: 1.75rem;"></distribution>
+    </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Specs from "./Specs";
+import Chart from "./Chart";
+import Descriptive from "./Descriptive";
+import Distribution from "./Distribution";
 
 export default {
-  name: 'home',
-  components: {
-    HelloWorld
-  }
-}
+    name: "home",
+    components: {
+        Chart,
+        Descriptive,
+        Specs,
+        Distribution
+    }
+};
 </script>
+
+<style scoped>
+.container {
+    margin-bottom: 16px;
+}
+</style>
