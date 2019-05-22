@@ -32,5 +32,5 @@ func main() {
 	r.POST("/api/descriptive/standard-deviation", routes.StdDev)
 	r.POST("/api/distribution", routes.NormalCDF)
 
-	r.Run()
+	r.Run(":3000")
 }
