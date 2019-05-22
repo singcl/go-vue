@@ -8,6 +8,10 @@ shadowsocks + proxifier = 直接更新 go 依赖
 
 https://devcenter.heroku.com/articles/go-apps-with-dep
 
+**HOW to use heroku git**
+
+https://devcenter.heroku.com/articles/git
+
 ### 问题：
 
 ```sh
